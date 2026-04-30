@@ -1,0 +1,21 @@
+Sub FormatarA4()
+    ' 1. Aplica o "Reduzir para Ajustar" no intervalo dos valores
+    ' Isso diminui a fonte dinamicamente se o número for muito grande
+    With Range("B18:G100")
+        .ShrinkToFit = True
+        .HorizontalAlignment = -4108 ' Centraliza (xlCenter) para manter o esquadro
+    End With
+
+    ' 2. Garante que as colunas tenham o mínimo de respiro
+    Columns("B:G").AutoFit
+
+    ' 3. Configura o esquadro da página A4
+    With ActiveSheet.PageSetup
+        .Orientation = 1 ' Retrato
+        .Zoom = False
+        .FitToPagesWide = 1 
+        .FitToPagesTall = False 
+        .PaperSize = 9 ' A4
+        .CenterHorizontally = True
+    End With
+End Sub

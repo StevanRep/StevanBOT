@@ -1,0 +1,6 @@
+{
+  "Name": "RPA_Nubank_Sales_Performer",
+  "ProjectType": "Process",
+  "Description": "Performer responsável por fazer a segunda parte do processo, encaminha email e finaliza itens na fila",
+  "MainFile": "Main.xaml"
+}
