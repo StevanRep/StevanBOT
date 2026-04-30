@@ -1,0 +1,6 @@
+{
+  "Name": "RPA_Nubank_Sales_Dispacher",
+  "ProjectType": "Process",
+  "Description": "---!!!ATENÇÃO!!!---\r\nPara a execução do processo, por favor, leia o arquivo \"README.txt\", para inserir todos os assets e parametros necessários ao Orchestrador que estiver utilizando.\r\n\r\nDispacher responsável por coletar informações contidas nos arquivos base fornecidos no case \"Sales Report_Template.xlsx\" e \"Vendor List.xlsx\"",
+  "MainFile": "Main.xaml"
+}
