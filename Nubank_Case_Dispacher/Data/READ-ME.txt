@@ -14,27 +14,56 @@ Uipath.PDF.Activities v4.1.0
 
 *** Info ***
 
+Arquivos necessários fornecidos para o case estão localizados na pasta "\Data" do processo
+pastas utilizadas
+
+Dispacher:       
+\Data\Input 	 - "Sales List.pdf / Sales Report_Template.xlsx / Vendor List.xlsx"                           
+\Data\Output
+\Data\Temp
+
+Performer: 
+\Data\Input  	- "Sales Report_Template.xlsx"                           
+\Data\Output
+\Data\Scripts 	- "FormatarA4.txt  (Script utilizado para formatação final do arquivo template gerado)
+\Data\Temp		- (Todos os arquivos gerados durante o processo, tanto Relatorio_Vendas.xlsx quanto Relatorio_Vendas.pdf)
+System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\NubankCaseErrors" (Diretorio Ex: '"C:\Users\vinic\Documents\NubankCaseErrors" responsável por salvar planilha contendo erros de   processamento do performer)
+
+
+
+***Debug***
+Para facilitar testes e desenvolvimento, foi gerado uma senha teste (123) para o pdf na atividade PDF_relatorioVendor no Performer, para desativa-la, substitua pela secure string sstr_Pwd
+
+
 Para o funcionamento correto do dispacher e performer, é necessário adicionar os seguintes itens no orquestrador:
 
 Queue:
 RPA_Nubank_Sales_Queue
 
-Assets:			  		Type:		Value: 
+Assets:			  				Type:		Value: 
 
-AnosPermitidos				Text		2018,2019,2020,2021
-API_CepUrl				Text		https://viacep.com.br/ws/
-API_URLCambio				Text		https://economia.awesomeapi.com.br/json/last/
-FileName_SalesList			Text		Sales List.pdf
-FileName_SalesReport_Template		Text		Sales Report_Template
-FileName_VendorList			Text		Vendor List.xlsx
-Filepath_Errors				Text		\NubankCaseErrors\Relatório de Erros Encontrados.xlsx
-Invoice_Message				Text		Please, GENERATE INVOICES by
-SheetName_Template			Text		{ID_VENDOR}
+AnosPermitidos					Text		2018,2019,2020,2021
+API_CepUrl						Text		https://viacep.com.br/ws/
+API_URLCambio					Text		https://economia.awesomeapi.com.br/json/last/
+FileName_SalesList				Text		Sales List.pdf
+FileName_SalesReport_Template	Text		Sales Report_Template
+FileName_VendorList				Text		Vendor List.xlsx
+Filepath_Errors					Text		\NubankCaseErrors\Relatório de Erros Encontrados.xlsx
+Invoice_Message					Text		Please, GENERATE INVOICES by
+SheetName_Template				Text		{ID_VENDOR}
 SheetName_VendorList			Text		Vendor list
 
-				
-	
+
+*** Observações ***
+
+Não é possível consultar CEP pelo site fornecido pela documentação "Correios", pois o mesmo solicita verificação Captcha, não permitindo acessos de robôs ao sistemas, Foi alterado consulta pela api utilizando
+a api - 
 
 
-
-
+Foi adicionado Delay na consulta da API Currency para evitar possíveis erros de Timeout ou TooManyREquest.
+***Importante***
+Validar volumetria dos dados tratdos e consultas API
+*Possiveis pontos de melhoria*
+Consultar uma nova API (diferente da que consta na documentação)
+Verificar volumetria de dados tratados para 'diluir' na fila via Triggers o volume de dados tratados por dia ex: *(Adicionar mais triggers ao decorrer do dia para diluir a volumetria de uma execução apenas)
+Validar se time do delay esta curto o suficiente para eliminar o "erro" de TooManyRequest da propria API
