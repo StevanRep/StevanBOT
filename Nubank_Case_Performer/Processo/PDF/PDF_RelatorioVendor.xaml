@@ -169,7 +169,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_Pwd]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("VendorID").ToString().Trim().Substring(in_TransactionItem.SpecificContent("VendorID").ToString().Trim().Length - 6)]</InArgument>
+                <InArgument x:TypeArguments="x:String">123</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -189,7 +189,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:Comment sap:VirtualizedContainerService.HintSize="488,362" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Alterar senha quando terminar de debugar de string para secure string&#xA;&#xA;str_Pwd = in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Substring(in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Length - 6)&#xA;&#xA;sstr_Pwd = New System.Net.NetworkCredential(&quot;&quot;, inTransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Substring(in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Length - 6)).SecurePassword" />
+      <ui:Comment sap:VirtualizedContainerService.HintSize="488,362" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Alterar senha quando terminar de debugar de string para secure string&#xA;&#xA;str_Pwd = in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Substring(in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Length - 6)&#xD;&#xA;&#xD;&#xA;&#xA;sstr_Pwd = New System.Net.NetworkCredential(&quot;&quot;, inTransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Substring(in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString().Trim().Length - 6)).SecurePassword" />
       <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="488,875" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" MacroSettings="EnableAll">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
