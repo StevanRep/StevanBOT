@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Queue_Listss" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="out_aux_Errors" Type="OutArgument(x:Boolean)" />
     <x:Property Name="out_dt_Errors" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="out_dt_RelatorioVendor" Type="OutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -149,7 +150,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Queue_Listss" sap:VirtualizedContainerService.HintSize="1243,11612" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Queue_Listss" sap:VirtualizedContainerService.HintSize="1243,11835" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="dbl_TotalAcumulado" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ErrosAcumulados" />
@@ -160,7 +161,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Sequence para extrair listas contidas no Transaction Item" DisplayName="Sequence Relatorio_Vendor" sap:VirtualizedContainerService.HintSize="708,11589" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Sequence para extrair listas contidas no Transaction Item" DisplayName="Sequence Relatorio_Vendor" sap:VirtualizedContainerService.HintSize="732,11812" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_MoedaAtual" />
         <Variable x:TypeArguments="s:String[]" Name="arr_UnitCosts" />
@@ -192,8 +193,8 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="674,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Relatorio_Vendor: Iniciando captura de informações contidas na fila&quot;]" />
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="674,428" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="698,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Relatorio_Vendor: Iniciando captura de informações contidas na fila&quot;]" />
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="698,428" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
@@ -285,7 +286,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <Sequence sap2010:Annotation.AnnotationText="Sequencia para ler arquivo de erros gerado pelo dispacher&#xA;Relatório de Erros Encontrados.xlsx&#xA;para inserir erros de valores que a API pode ter gerado" DisplayName="Sequence coleta Relatório de Erros Encontrados" sap:VirtualizedContainerService.HintSize="674,313" sap2010:WorkflowViewState.IdRef="Sequence_27">
+      <Sequence sap2010:Annotation.AnnotationText="Sequencia para ler arquivo de erros gerado pelo dispacher&#xA;Relatório de Erros Encontrados.xlsx&#xA;para inserir erros de valores que a API pode ter gerado" DisplayName="Sequence coleta Relatório de Erros Encontrados" sap:VirtualizedContainerService.HintSize="698,313" sap2010:WorkflowViewState.IdRef="Sequence_27">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="str_RowsCountError" />
         </Sequence.Variables>
@@ -303,7 +304,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:BuildDataTable>
       </Sequence>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="674,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Relatorio_Vendor: Criando dt_RelatorioVendor&quot;]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="698,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Relatorio_Vendor: Criando dt_RelatorioVendor&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -311,20 +312,20 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:BuildDataTable sap2010:Annotation.AnnotationText="dt_RelatorioVendor para preencher arquivo de saida" DataTable="[dt_RelatorioVendor]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="674,137" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Invoice&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UnitCosts1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UnitCosts&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Moedas&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ItemTypes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable sap2010:Annotation.AnnotationText="dt_RelatorioVendor para preencher arquivo de saida" DataTable="[dt_RelatorioVendor]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="698,137" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Invoice&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UnitCosts1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UnitCosts&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Moedas&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ItemTypes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:BuildDataTable>
-      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="[int_IndexRelatorio]" DisplayName="For Each currentNumber" sap:VirtualizedContainerService.HintSize="674,8045" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0, arr_invoices.Count).ToArray()]">
+      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="[int_IndexRelatorio]" DisplayName="For Each currentNumber" sap:VirtualizedContainerService.HintSize="698,8237" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0, arr_invoices.Count).ToArray()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Int32">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
             </ActivityAction.Argument>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="672,7914" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="672,8036" sap2010:WorkflowViewState.IdRef="TryCatch_4">
               <TryCatch.Finally>
                 <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="670,90" sap2010:WorkflowViewState.IdRef="Sequence_38">
                   <sap:WorkflowViewStateService.ViewState>
@@ -335,7 +336,7 @@
                 </Sequence>
               </TryCatch.Finally>
               <TryCatch.Try>
-                <Sequence DisplayName="Sequence Relatorio_Vendor" sap:VirtualizedContainerService.HintSize="670,7092" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Sequence Relatorio_Vendor" sap:VirtualizedContainerService.HintSize="670,7843" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -402,14 +403,14 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:MultipleAssign>
                   <ui:Comment sap:VirtualizedContainerService.HintSize="636,323" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Try catch responsável por identificar uma data inválida como por exemplo (*31/11 que consta na SalesList.pdf* &quot;Não existe 31 de novembro&quot; ou outras datas invalidas que podem vir) e logar como warn para seguir com o fluxo e não invalidar o processamento de dados dos proximos itens do vendor&#xA;&#xA;**** Cabe validação com área de negócios para decidir Business Exception ou não ****&#xA;&#xA;Para questão de Testes, decidi ignorar o item e tratar os proximos itens do in_Transaction" />
-                  <TryCatch sap2010:Annotation.AnnotationText="" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="636,809" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <TryCatch sap2010:Annotation.AnnotationText="" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="636,1424" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Assign sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign sap:VirtualizedContainerService.HintSize="520,143" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:DateTime">[date_FaturaAtual]</OutArgument>
                         </Assign.To>
@@ -424,21 +425,43 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,349" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,964" sap2010:WorkflowViewState.IdRef="Sequence_25">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;Relatorio_Vendor: Data inválida encontrada na Invoice &quot; + str_InvoiceAtual + &quot;. Valor: &quot; + arr_Dates(int_IndexRelatorio) + &quot;. Pulando para o próximo item.&quot;]" />
-                            <Throw Exception="[NEW BusinessRuleException(&quot;Data inválida encontrada na Invoice &quot; + str_InvoiceAtual + &quot;. Valor: &quot; + arr_Dates(int_IndexRelatorio))]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                            <Assign sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="Assign_18">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[aux_Error]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;Relatorio_Vendor: Data inválida encontrada na Invoice &quot; + str_InvoiceAtual + &quot;. Valor: &quot; + arr_Dates(int_IndexRelatorio) + &quot;. Pulando para o próximo item.&quot;]" />
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {str_InvoiceAtual, in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString(), &quot;Data inválida encontrada na Invoice &quot; + str_InvoiceAtual + &quot;. Valor: &quot; + arr_Dates(int_IndexRelatorio)}]" DataTable="[dt_ErrosAcumulados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="486,221" sap2010:WorkflowViewState.IdRef="AddDataRow_16" />
+                            <ui:Continue sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,276" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Throw Exception="[NEW BusinessRuleException(&quot;Data inválida encontrada na Invoice &quot; + str_InvoiceAtual + &quot;. Valor: &quot; + arr_Dates(int_IndexRelatorio))]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                            </ui:CommentOut>
                           </Sequence>
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>
                     <TryCatch.Finally>
-                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="520,90" sap2010:WorkflowViewState.IdRef="Sequence_26">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -448,7 +471,7 @@
                     </TryCatch.Finally>
                   </TryCatch>
                   <ui:Comment sap:VirtualizedContainerService.HintSize="636,284" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Por motivos de defesa da API, dependendo da quantidade de vezes que utilizarmos a consulta, ela pode bloquear a atuação do robo.&#xA;Para eviter erros de Timeout e TooManyRequests na consulta da API, criei um dictionary para efetuar a consulta da moeda apenas uma vez e nao ter que consultar a api a cada linha ex:(BRL,USD,EUR).&#xA;Se moeda nao for brl e nao existir no dict = consulta API&#xA;se moeda BRL ou constar no dic = Nao consulta API&#xA;" />
-                  <If sap2010:Annotation.AnnotationText="" Condition="[Not str_MoedaAtual.Equals(&quot;BRL&quot;) AndAlso Not dict_Cotacoes.ContainsKey(str_MoedaAtual)]" sap:VirtualizedContainerService.HintSize="636,3761" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap2010:Annotation.AnnotationText="" Condition="[Not str_MoedaAtual.Equals(&quot;BRL&quot;) AndAlso Not dict_Cotacoes.ContainsKey(str_MoedaAtual)]" sap:VirtualizedContainerService.HintSize="636,4098" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -457,15 +480,15 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="548,2918" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="556,3255" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Relatorio_Vendor: Delay 7 sec para evitar possíveis timeout&quot;]" />
-                        <Delay sap2010:Annotation.AnnotationText="Delay adicionado para evitar possíveis erros de Timeout ou TooManyREquest.&#xA;***Importante***&#xA;Validar volumetria dos dados tratdos e consultas API&#xA;*Possiveis pontos de melhoria*&#xA;Consultar uma nova API (diferente da que consta na documentação)&#xA;Verificar volumetria de dados tratados para 'diluir' na fila via Triggers o volume de dados tratados por dia ex: *(Adicionar mais triggers ao decorrer do dia para diluir a volumetria de uma execução apenas)&#xA;Validar se time do delay esta curto o suficiente para eliminar o &quot;erro&quot; de TooManyRequest da propria API" Duration="00:00:07" sap:VirtualizedContainerService.HintSize="514,396" sap2010:WorkflowViewState.IdRef="Delay_1">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Relatorio_Vendor: Delay 7 sec para evitar possível bloquei API 'TooManyRequests&quot;]" />
+                        <Delay sap2010:Annotation.AnnotationText="Delay adicionado para evitar possíveis erros de Timeout ou TooManyREquest.&#xA;***Importante***&#xA;Validar volumetria dos dados tratdos e consultas API&#xA;*Possiveis pontos de melhoria*&#xA;Consultar uma nova API (diferente da que consta na documentação)&#xA;Verificar volumetria de dados tratados para 'diluir' na fila via Triggers o volume de dados tratados por dia ex: *(Adicionar mais triggers ao decorrer do dia para diluir a volumetria de uma execução apenas)&#xA;Validar se time do delay esta curto o suficiente para eliminar o &quot;erro&quot; de TooManyRequest da propria API" Duration="00:00:07" sap:VirtualizedContainerService.HintSize="522,396" sap2010:WorkflowViewState.IdRef="Delay_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -474,7 +497,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </Delay>
-                        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="514,710" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:10">
+                        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="522,710" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:10">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
                               <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,503" sap2010:WorkflowViewState.IdRef="Sequence_14">
@@ -498,7 +521,7 @@
                             <ActivityFunc x:TypeArguments="x:Boolean" />
                           </ui:RetryScope.Condition>
                         </ui:RetryScope>
-                        <If sap2010:Annotation.AnnotationText="Validação para verificar Status &quot;OK&quot; da consulta API&#xA;Se status httpr &lt;&gt; &quot;OK&quot; Throw system.excepc" Condition="[httpr_ApiCambio.StatusCode = System.Net.HttpStatusCode.OK]" sap:VirtualizedContainerService.HintSize="514,1577" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If sap2010:Annotation.AnnotationText="Validação para verificar Status &quot;OK&quot; da consulta API&#xA;Se status httpr &lt;&gt; &quot;OK&quot; Throw system.excepc" Condition="[httpr_ApiCambio.StatusCode = System.Net.HttpStatusCode.OK]" sap:VirtualizedContainerService.HintSize="522,1914" sap2010:WorkflowViewState.IdRef="If_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -507,14 +530,14 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,832" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="520,832" sap2010:WorkflowViewState.IdRef="Sequence_10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_10">
+                              <Assign sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="Assign_10">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[str_ResponseText]</OutArgument>
                                 </Assign.To>
@@ -522,8 +545,8 @@
                                   <InArgument x:TypeArguments="x:String">[httpr_ApiCambio.TextContent]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="478,174" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[json_ApiCambio]" JsonString="[str_ResponseText]" />
-                              <ui:MultipleAssign sap2010:Annotation.AnnotationText="dbl_Cotacao = cotação retornada da API&#xA;dict_Cotacoes = dicionario que coleca cotações para evitar TooManyRequest da API&#xA;" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,257" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                              <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="486,174" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[json_ApiCambio]" JsonString="[str_ResponseText]" />
+                              <ui:MultipleAssign sap2010:Annotation.AnnotationText="dbl_Cotacao = cotação retornada da API&#xA;dict_Cotacoes = dicionario que coleca cotações para evitar TooManyRequest da API&#xA;" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="486,257" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                                 <ui:MultipleAssign.AssignOperations>
                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
@@ -550,18 +573,26 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:MultipleAssign>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Relatorio_Vendor: Efetuando formatação JSON&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Relatorio_Vendor: Efetuando formatação JSON&quot;]" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,570" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="520,907" sap2010:WorkflowViewState.IdRef="Sequence_11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Relatorio_Vendor: Falha ao consultar a API de Câmbio para a moeda: &quot; + str_MoedaAtual + &quot;. Status: &quot; + httpr_ApiCambio.StatusCode.ToString + &quot; - Detalhes: &quot; + str_ResponseText]">
+                              <Assign sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[aux_Error]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Relatorio_Vendor: Falha ao consultar a API de Câmbio para a moeda: &quot; + str_MoedaAtual + &quot;. Status: &quot; + httpr_ApiCambio.StatusCode.ToString + &quot; - Detalhes: &quot; + str_ResponseText]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -569,22 +600,33 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:LogMessage>
-                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{str_InvoiceAtual, in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString, &quot;Erro de Conversão API: Moeda &quot; + str_MoedaAtual + &quot; retornou &quot; + httpr_ApiCambio.StatusCode.ToString}]" DataTable="[dt_ErrosAcumulados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="478,221" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-                              <Throw Exception="[New SystemException(&quot;Falha ao consultar a API de Câmbio para a moeda: &quot; + str_MoedaAtual + &quot;. Status: &quot; + httpr_ApiCambio.StatusCode.ToString + &quot; - Detalhes: &quot; + str_ResponseText)]" sap:VirtualizedContainerService.HintSize="478,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{str_InvoiceAtual, in_TransactionItem.SpecificContent(&quot;VendorID&quot;).ToString, &quot;Erro de Conversão API: Moeda &quot; + str_MoedaAtual + &quot; retornou &quot; + httpr_ApiCambio.StatusCode.ToString}]" DataTable="[dt_ErrosAcumulados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="486,221" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,276" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Throw Exception="[New SystemException(&quot;Falha ao consultar a API de Câmbio para a moeda: &quot; + str_MoedaAtual + &quot;. Status: &quot; + httpr_ApiCambio.StatusCode.ToString + &quot; - Detalhes: &quot; + str_ResponseText)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                              </ui:CommentOut>
                             </Sequence>
                           </If.Else>
                         </If>
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="548,673" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="556,673" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If sap2010:Annotation.AnnotationText="Condição para verificar se é BRL ou Insere na dict" Condition="[str_MoedaAtual.Equals(&quot;BRL&quot;)]" sap:VirtualizedContainerService.HintSize="514,613" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If sap2010:Annotation.AnnotationText="Condição para verificar se é BRL ou Insere na dict" Condition="[str_MoedaAtual.Equals(&quot;BRL&quot;)]" sap:VirtualizedContainerService.HintSize="522,613" sap2010:WorkflowViewState.IdRef="If_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -630,26 +672,26 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Condição aplicada para conseguir efetuar o fluxo completo do processo, caso ao contrario, nao seria possível executar nenhum arquivo, ja que os anos permitidos &quot;2018.2019,2020,2021&quot; sao menores que qualquer data de 2026.&#xA;Para rodar com massa atual  com datas reais, a condição seria diferente, para excluir qualquer um antes e depois de d&lt;30" Condition="[date_FaturaAtual &lt;= Now.AddDays(30)]" sap:VirtualizedContainerService.HintSize="636,1551" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If sap2010:Annotation.AnnotationText="Condição aplicada para conseguir efetuar o fluxo completo do processo, caso ao contrario, nao seria possível executar nenhum arquivo, ja que os anos permitidos &quot;2018.2019,2020,2021&quot; sao menores que qualquer data de 2026.&#xA;Para rodar com massa atual  com datas reais, a condição seria diferente, para excluir qualquer um antes e depois de d&lt;30" Condition="[date_FaturaAtual &lt;= Now.AddDays(30)]" sap:VirtualizedContainerService.HintSize="636,1350" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="634,1237" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="634,1036" sap2010:WorkflowViewState.IdRef="Sequence_21">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="// Elif responsável por Aplicar as taxas relacionada aos estados citados na doc&#xA;&#xA;Tentei utilizar um Switch Case para as UFS mas aparentemente esta com um bug visual na versao uipath que estou usando, para evitar prolongacao desnecessaria, farei com elif" Condition="[in_TransactionItem.SpecificContent(&quot;UF&quot;).ToString.Trim.ToUpper.Equals(&quot;SP&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="600,643" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                        <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="// Elif responsável por Aplicar as taxas relacionada aos estados citados na doc&#xA;&#xA;Tentei utilizar um Switch Case para as UFS mas aparentemente esta com um bug visual na versao uipath que estou usando, para evitar prolongacao desnecessaria, farei com elif" Condition="[in_TransactionItem.SpecificContent(&quot;UF&quot;).ToString.Trim.ToUpper.Equals(&quot;SP&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="600,442" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                           <ui:IfElseIfV2.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="598,226" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="598,25" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Assign sap:VirtualizedContainerService.HintSize="564,166" sap2010:WorkflowViewState.IdRef="Assign_6">
@@ -780,7 +822,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Assign sap:VirtualizedContainerService.HintSize="674,175" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign sap:VirtualizedContainerService.HintSize="698,175" sap2010:WorkflowViewState.IdRef="Assign_11">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Double">[dbl_TotalAcumulado]</OutArgument>
         </Assign.To>
@@ -788,7 +830,7 @@
           <InArgument x:TypeArguments="x:Double">[dt_RelatorioVendor.AsEnumerable().Sum(Function(row) Double.Parse(row("ItemTypes").ToString.Replace(",", "").Trim, System.Globalization.CultureInfo.InvariantCulture))]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[Not aux_Error and dbl_TotalAcumulado &gt; 2000000]" sap:VirtualizedContainerService.HintSize="674,1650" sap2010:WorkflowViewState.IdRef="If_8">
+      <If Condition="[Not aux_Error and dbl_TotalAcumulado &gt; 2000000]" sap:VirtualizedContainerService.HintSize="698,1650" sap2010:WorkflowViewState.IdRef="If_8">
         <If.Then>
           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,668" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <sap:WorkflowViewStateService.ViewState>
@@ -829,7 +871,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Argumento out das dts criadas" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="674,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Argumento out das dts criadas" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="698,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
@@ -848,6 +890,14 @@
                 <InArgument x:TypeArguments="sd:DataTable">[dt_ErrosAcumulados]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_55">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Boolean">[out_aux_Errors]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Boolean">[aux_Error]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
         <sap:WorkflowViewStateService.ViewState>
@@ -856,7 +906,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="674,166" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Relatorio_Vendor: Criando dt_RelatorioVendor&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="698,166" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Relatorio_Vendor: Criando dt_RelatorioVendor&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
