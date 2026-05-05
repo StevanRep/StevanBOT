@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Esse CEP é de",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "Y8bWMarlc0in43n7KiZTrg",
+  "Reference": "BbFQ3JYD5Ea8-tmDJU94oQ/Y8bWMarlc0in43n7KiZTrg",
+  "ParentRef": "BbFQ3JYD5Ea8-tmDJU94oQ/oaVsmyFekUC8hifpAUAxuA",
+  "Created": "2026-04-24T04:27:02.2741004Z",
+  "Updated": "2026-04-24T04:27:02.2741004Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

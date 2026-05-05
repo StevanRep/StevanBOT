@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="WKEbb0jDW0iCGSTeD7Ualw" Reference="BbFQ3JYD5Ea8-tmDJU94oQ/3BX0X7wk1EOdoLgVa9yEbA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="yH0yfJhJTkuS38r5LeLnnw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACuoAAArqAVDM774AAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAACFElEQVQ4T2P4//8/AyUYQ4BUjCGAImmfcZTBKuk/g3HUfwbtgP/MZtH/+WZcPEe8AXYZ5gxWSb8ZTKL/M2j4/mM2i/4ntvreP65ZNxuJMgCswDwxksEo8j+Dlv8/oQn7/klte/ZfZPWD/2z9F72JMgCEGVU9urhzZvwXWXTpn+jiy/8lNz36L7T83jv2/ovRcEXfz7KLfj/LfuD3JZZrf68yXft3jfHa/2sM9/8/Y8hn6Hrpyd+x/b/ghH3/hWef/i+2/Pp/iY2P/gsuuz8LbsDbg/ynPp/k+v/jPNv/35eZ//+9yvj//x2Gq06T12mzFy/9xlu98j9/+9b/QpMO/heZd+6/2IobTXAv3Fkt1/lsh9j/94f4/n85xfn/5wXW//+uMn5ae9hZiyFm+m3O9En/uYsX/OetW/1foGvHf6Eph4/ALGZ4vFVi0ZWFqv/vrpX9/2K3yP8PR3j/fz/L/u//awYXBuvJRSwhdbfZE7ovc2ZPv8xdtvgyX+P6nXwtmwThBvy4xBb2aJPUm4vz1f8/2CD9//0RwX/X54n835Cp2o8emNgwmPh5idX97hrZ/9eWqv2/vVTs38ZMuX+7qpT/H2pVjUPXgI7hjE8neWrvrpL+tzFN8t/GTPn/u6uU/h/uUPt7crKmNbomrAaA8JvdPAc2ZUh+3JQt93Z3ldLbwx1qn05N1tyFrgmnAeRgDAFSMQAnXKi+F/l+QwAAAABJRU5ErkJggg==" Reference="BbFQ3JYD5Ea8-tmDJU94oQ/3BX0X7wk1EOdoLgVa9yEbA" Selector="&lt;html app='chrome.exe' title='Busca CEP' /&gt;" Url="https://buscacepinter.correios.com.br/app/endereco/index.php?t" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="dba3bc55352da19557395ba9990e1c05.jpg" xmlns="">0HqT26LYNSUC-b0fKCgOvCQ</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Busca CEP",
+  "Type": "App",
+  "Id": "Ymjxu-t6Gku_hcTWgySO1w",
+  "Reference": "BbFQ3JYD5Ea8-tmDJU94oQ/Ymjxu-t6Gku_hcTWgySO1w",
+  "Created": "2026-04-24T04:12:59.4679602Z",
+  "Updated": "2026-04-24T04:12:59.4679602Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
